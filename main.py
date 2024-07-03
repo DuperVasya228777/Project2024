@@ -49,24 +49,20 @@ def index():
            methods = ["POST","GET"])
 @isLogin
 def main():
-    data = db_api.get_all_product()
+    data = db_api.get_all_agent()
     user = db_api.get_user(session["user_id"])
     print(data)
     return render_template("main.html", data = data, user = user)
 
-@app.route("/product/<id>", 
-           endpoint = "product", 
-           methods = ["POST","GET"])# <a href="localhost:5000/product/{{id}}">кнопка</a>
+@app.route("/agent/<id>", 
+           endpoint = "agent", 
+           methods = ["POST","GET"])# <a href="localhost:5000/agent/{{id}}">кнопка</a>
 @isLogin
-def product(id:int):
-    data = db_api.get_product(id)
+def agent(id:int):
+    data = db_api.get_agent(id)
     user = db_api.get_user(session["user_id"])
-    return render_template("product.html", 
-                            id = data[0],
-                            title = data[1],
-                            info = data[2], 
-                            prise = data[3], 
-                            category = db_api.get_category(data[4])[1], 
+    return render_template("agent.html", 
+                            data = data, 
                             user = user)
 
 @app.route("/exit", 

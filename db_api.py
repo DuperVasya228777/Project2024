@@ -156,9 +156,9 @@ def add_agent(title,info,icon,spell_1_image,spell_1_info,spell_1_title,spell_2_i
 def get_agent(id:int):
     " get_agent -> [id, title, info, prise, id_category] "
     db_open()
-    cursor.execute("""SELECT id,title,info,icon,spell_1_image,spell_1_info,spell_1_title,spell_2_image,spell_2_info,spell_2_title,spell_3_image,spell_3_info,spell_3_title,spell_4_image,spell_4_info,spell_4_title,prise,id_category
-                        FROM agent
-                        WHERE id == ?  
+    cursor.execute("""SELECT agent.id,agent.title,agent.info,agent.icon,agent.spell_1_image,agent.spell_1_info,agent.spell_1_title,agent.spell_2_image,agent.spell_2_info,agent.spell_2_title,agent.spell_3_image,agent.spell_3_info,agent.spell_3_title,agent.spell_4_image,agent.spell_4_info,agent.spell_4_title,agent.prise,category.title,category.info
+                        FROM agent,category
+                        WHERE agent.id_category == category.id AND agent.id == ? 
                    """,(id,))
     data = cursor.fetchone()
     db_close()

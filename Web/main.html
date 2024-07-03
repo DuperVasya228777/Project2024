@@ -8,9 +8,9 @@
 {% block main %}
     
     <h1> Вы зашли на Main </h1> 
-    {% for id, title, info, prise, id_category in data %}
+    {% for id,title,info,icon,spell_1_image,spell_1_info,spell_1_title,spell_2_image,spell_2_info,spell_2_title,spell_3_image,spell_3_info,spell_3_title,spell_4_image,spell_4_info,spell_4_title,prise,id_category in data %}
         <p>{{title}}</p> 
-        <p><a href="/product/{{id}}">кнопка</a></p>
+        <p><a href="/agent/{{id}}">кнопка</a></p>
         <p>===============================================</p> 
     {% endfor %}
 
