@@ -7,12 +7,25 @@
 
 {% block main %}
     
-    <h1> Вы зашли на Main </h1> 
+<div style="background-size: 100% 500px; background-repeat: no-repeat; background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/92b78ced-1b1f-4a14-ad7e-4aa19910e24a/deifbc2-bcc43f88-e0e6-48ab-8478-658fef994cd2.png/v1/fill/w_1280,h_427,q_80,strp/jett_valorant_twitter_header_by_connorjones_deifbc2-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDI3IiwicGF0aCI6IlwvZlwvOTJiNzhjZWQtMWIxZi00YTE0LWFkN2UtNGFhMTk5MTBlMjRhXC9kZWlmYmMyLWJjYzQzZjg4LWUwZTYtNDhhYi04NDc4LTY1OGZlZjk5NGNkMi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.Ejp1rc60MbEECnawk9LaIskMwB2gpMOwt5x6CofVIbs');" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+  <div class="col-md-6 p-lg-5 mx-auto my-5">
+    <h1 style="color: aliceblue;" class="display-3 fw-bold">Агенты Valorant</h1>
+    <h3 style="color: rgb(202, 202, 202);">Выбери своего агента</h3>
+  </div>
+</div>
+
+
+
     {% for id,title,info,icon,spell_1_image,spell_1_info,spell_1_title,spell_2_image,spell_2_info,spell_2_title,spell_3_image,spell_3_info,spell_3_title,spell_4_image,spell_4_info,spell_4_title,prise,id_category in data %}
-        <p>{{title}}</p> 
-        <img scr="{{icon}}">
-        <p><a href="/agent/{{id}}">кнопка</a></p>
-        <p>===============================================</p> 
+
+        <a href="/agent/{{id}}">
+            <div class="container my-5">
+                <div class="p-5 text-center bg-body-tertiary rounded-3">
+                    <img src="{{icon}}" class="bi mt-4 mb-3" width="300" height="400">
+                    <h1 class="text-body-emphasis">{{title}}</h1>
+                </div>
+            </div>
+        </a>
     {% endfor %}
 
 {% endblock %}

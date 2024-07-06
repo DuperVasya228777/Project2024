@@ -5,10 +5,26 @@
 {% block title %}Login{% endblock %}
 
 {% block main %}
-<h1> Вход в аккаунт</h1>    
 <form method="post" action="/login">
-    <p>Login: <input type="text" id="username" name="login"></p>
-    <p>Password: <input type="password" id="pass" name="password"></p>
-    <p><input type="submit" value="Вход"></p>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card px-5 py-5" id="form1">
+                    <div class="form-data" v-if="!submitted">
+                        <div class="forms-inputs mb-4"> <span>Login</span> <input name="login" type="text">
+
+                        </div>
+                        <div class="forms-inputs mb-4"> <span>Password</span> <input name="password" type="password">
+                        </div>
+                        <a href="/reg"><span  class="mb-3">Sign up</span></a>
+                        <div class="mb-3"> <button v-on:click.stop.prevent="submit" class="btn btn-dark w-100">Login</button> </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
+
 {% endblock %}

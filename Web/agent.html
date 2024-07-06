@@ -1,15 +1,98 @@
 {% extends "baseWeb.html" %}
 
 
-{% block style %}{% endblock %}
+{% block style %}
+
+{% endblock %}
 {% block title %}Product{% endblock %}
 
 {% block main %}
-    {% for id,title,info,icon,spell_1_image,spell_1_info,spell_1_title,spell_2_image,spell_2_info,spell_2_title,spell_3_image,spell_3_info,spell_3_title,spell_4_image,spell_4_info,spell_4_title,prise,category, category_info in data %}
-    <h1>{{ title}} /// {{category}}</h1>
-    <p>{{prise}}</p>
-    <p>{{info}}</p>
-    <a href="/main">кнопка</a>
+    {% for id, title, info, icon, spell_1_image, spell_1_info, spell_1_title, spell_2_image,spell_2_info,spell_2_title,spell_3_image,spell_3_info,spell_3_title,spell_4_image,spell_4_info,spell_4_title,prise,category, category_info in data %}
+
+    
+
+        <div class="px-4 py-5 my-5 text-center">
+            <img class="d-block mx-auto mb-4" src="{{icon}}"  width="200" height="500">
+            <h1 class="display-5 fw-bold text-body-emphasis">{{title}}: {{category}}</h1>
+            <div class="col-lg-6 mx-auto">
+              <p class="lead mb-4">{{info}}</p>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+ 
+        <div style="background-color: rgb(189 189 189) !important; margin-top: 25px;" class="p-5 text-center rounded-3">
+            <div class="container col-xxl-8 px-4 py-5 my-5" >
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              
+                  <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="{{spell_1_image}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                  </div>
+                  <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{spell_1_title}}</h1>
+                    <p class="lead">{{spell_1_info}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="b-example-divider"></div>
+
+        <div style="background-color: rgb(189 189 189) !important; margin-top: 25px;" class="p-5 text-center rounded-3">
+            <div class="container col-xxl-8 px-4 py-5 my-5" >
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              
+                  <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="{{spell_2_image}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                  </div>
+                  <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{spell_2_title}}</h1>
+                    <p class="lead">{{spell_2_info}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <div style="background-color: rgb(189 189 189) !important; margin-top: 25px;" class="p-5 text-center rounded-3">
+            <div class="container col-xxl-8 px-4 py-5 my-5" >
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              
+                  <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="{{spell_3_image}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                  </div>
+                  <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{spell_3_title}}</h1>
+                    <p class="lead">{{spell_3_info}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <div style="background-color: rgb(189 189 189) !important; margin-top: 25px;" class="p-5 text-center rounded-3">
+            <div class="container col-xxl-8 px-4 py-5 my-5" >
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              
+                  <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="{{spell_4_image}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                  </div>
+                  <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{spell_4_title}}</h1>
+                    <p class="lead">{{spell_4_info}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
    {%endfor%} 
 
 {% endblock %}
